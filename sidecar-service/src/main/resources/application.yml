@@ -1,0 +1,14 @@
+info:
+  component: Sidecar Server
+  
+server:
+  port: 9090
+
+spring:
+  application:
+    name: sidecar-service
+
+sidecar:
+  port: ${port:3033}
+  health-uri: http://localhost:${sidecar.port}/${health-uri:health.json}
+  home-page-uri: http://localhost:${sidecar.port}/
